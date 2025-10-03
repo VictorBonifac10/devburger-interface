@@ -11,14 +11,16 @@ import { Button } from "../../components/Button";
 
 import Logo from '../../assets/logo-devburger.png'
 
-export function Login() {
+export function Register() {
 
     let navigate = useNavigate();
 
     const schema = yup
         .object({
+            name: yup.string().required('O nome é obrigatório.'),
             email: yup.string().email('O e-mail deve ser válido.').required('O e-mail é obrigatório.'),
             password: yup.string().min(6, 'A senha deve ter no mínimo 6 caracteres.').required('A senha é obrigatória.'),
+            confirmPassword: yup.string().oneOf([yup.ref('password')], 'As senhas devem ser iguais.').required('A senha é obrigatória.'),
         })
         .required();
 
@@ -32,24 +34,32 @@ export function Login() {
     });
 
     const onSubmit = async (data) => {
-        const response = await toast.promise(
-            api.post('/session', {
+
+        try {
+            const { status } = await api.post('/users', {
+                name: data.name,
                 email: data.email,
                 password: data.password,
-            }),
-            {
-                pending: 'Verificando dados 🔍',
-                success: {
-                    render() {
-                        setTimeout(() => {
-                            navigate('/');
-                        }, 2000);
-                        return `Seja bem-vindo! 👌`
-                    },
+            },
+                {
+                    validateStatus: () => true
                 },
-                error: 'E-mail ou senha incorretos! 🤯',
+            );
+
+            if (status === 200 || status === 201) {
+                setTimeout(() => {
+                    navigate('/login');
+                }, 2000);
+                toast.success('Conta cadastrada com sucesso! 👌')
+            } else if (status === 400 || status === 409) {
+                toast.error('Conta já existente. Faça login para continuar! 🤔')
+            } else {
+                throw new Error(); //faz com que caia no catch(error)
             }
-        );
+        } catch (error) {
+            toast.error('Falha no sistema! Tente novamente mais tarde. 😢')
+        };
+
     };
 
     return (
@@ -59,10 +69,13 @@ export function Login() {
             </LeftContainer>
             <RightContainer>
                 <Form onSubmit={handleSubmit(onSubmit)}>
-                    <Title>Olá, seja bem vindo ao <span>Dev Burger!</span>
-                        <br />
-                        Acesse com seu <span>Login e senha.</span>
-                    </Title>
+                    <Title>Cadastre-se agora!</Title>
+
+                    <InputContainer>
+                        <label>Nome</label>
+                        <input type="text" {...register("name")} />
+                        <p>{errors?.name?.message}</p>
+                    </InputContainer>
 
                     <InputContainer>
                         <label>Email</label>
@@ -76,9 +89,15 @@ export function Login() {
                         <p>{errors?.password?.message}</p>
                     </InputContainer>
 
-                    <Button type="submit">Entrar</Button>
+                    <InputContainer>
+                        <label>Confirmar senha</label>
+                        <input type="password" {...register("confirmPassword")} />
+                        <p>{errors?.confirmPassword?.message}</p>
+                    </InputContainer>
 
-                    <p>Não possui conta? <Link to="/cadastro">Clique aqui.</Link></p>
+                    <Button type="submit">Cadastrar</Button>
+
+                    <p>Já possui conta? <Link to="/login">Clique aqui.</Link></p>
                 </Form>
             </RightContainer>
         </Container>

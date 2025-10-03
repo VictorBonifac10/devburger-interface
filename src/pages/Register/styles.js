@@ -46,21 +46,16 @@ export const RightContainer = styled.div`
 export const Title = styled.h2`
     font-family: "Road Rage", sans-serif;
     font-size: 35px;
-    color: #ffffffff;
+    color: #9758a6;
     display: block;
     margin: 0 auto;
     text-align: center;
-
-    span{
-        color: #9758a6;
-        font-family: "Road Rage", sans-serif;
-    }
 `;
 
 export const Form = styled.form`
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
     padding: 25px;
     width: 100%;
     max-width: 400px;
