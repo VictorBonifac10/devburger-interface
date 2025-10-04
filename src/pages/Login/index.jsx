@@ -32,7 +32,7 @@ export function Login() {
     });
 
     const onSubmit = async (data) => {
-        const response = await toast.promise(
+        const { data: {token}} = await toast.promise(
             api.post('/session', {
                 email: data.email,
                 password: data.password,
@@ -50,6 +50,8 @@ export function Login() {
                 error: 'E-mail ou senha incorretos! 🤯',
             }
         );
+
+        localStorage.setItem('token', token)
     };
 
     return (
