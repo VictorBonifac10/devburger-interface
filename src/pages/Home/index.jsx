@@ -1,5 +1,7 @@
+import { CardProduct } from "../../components/CardProduct";
 import { CategoriesCarousel } from "../../components/CategoriesCarousel";
-import { Banner, Container, Content } from "./styles";
+import { OffersCarousel } from "../../components/OffersCarousel";
+import { Banner, Container } from "./styles";
 
 export function Home() {
     return (
@@ -8,11 +10,11 @@ export function Home() {
                 <h1>Bem-vindo(a)!</h1>
             </Banner>
             <Container>
-                <Content>
+         
                     <CategoriesCarousel />
-                    <div>Carrossel Produtos</div>
-                </Content>
+                    <OffersCarousel />
+           
             </Container>
         </main>
-    );s
+    );
 }
