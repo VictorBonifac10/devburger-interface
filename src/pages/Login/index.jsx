@@ -1,19 +1,21 @@
-import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
-import * as yup from "yup"
-import { toast } from 'react-toastify';
+import { useForm } from "react-hook-form"
 import { useNavigate } from "react-router";
+import { toast } from 'react-toastify';
+import * as yup from "yup";
 
-import { api } from "../../services/api"
+import { useUser } from '../../hooks/UserContext';
+import { api } from "../../services/api";
 
-import { Container, Form, InputContainer, LeftContainer, RightContainer, Title, Link, } from "./styles"
 import { Button } from "../../components/Button";
+import Logo from '../../assets/logo-devburger.png';
 
-import Logo from '../../assets/logo-devburger.png'
+import { Container, Form, InputContainer, LeftContainer, RightContainer, Title, Link, } from "./styles";
 
 export function Login() {
 
     let navigate = useNavigate();
+    const { putUserData } = useUser();
 
     const schema = yup
         .object({
@@ -32,7 +34,7 @@ export function Login() {
     });
 
     const onSubmit = async (data) => {
-        const { data: {token}} = await toast.promise(
+        const { data: userData } = await toast.promise(
             api.post('/session', {
                 email: data.email,
                 password: data.password,
@@ -51,7 +53,9 @@ export function Login() {
             }
         );
 
-        localStorage.setItem('token', token)
+        putUserData(userData)
+
+        // localStorage.setItem('token', userData)
     };
 
     return (

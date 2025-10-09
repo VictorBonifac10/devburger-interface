@@ -11,6 +11,7 @@ export const Container = styled.div`
     background-color: #fff;
     cursor: grab;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    position: relative;
 
     div{
         width: 100%;
@@ -41,6 +42,5 @@ export const Container = styled.div`
 export const CardImage = styled.img`
     height: 100px;
     position: absolute;
-    top: -20px;
-
+    top: -50px;
 `

@@ -1,20 +1,23 @@
 import { CardProduct } from "../../components/CardProduct";
 import { CategoriesCarousel } from "../../components/CategoriesCarousel";
+import { Footer } from "../../components/Footer";
 import { OffersCarousel } from "../../components/OffersCarousel";
-import { Banner, Container } from "./styles";
+import { Main, Banner, Container } from "./styles";
+
+import { useUser } from "../../hooks/UserContext";
 
 export function Home() {
+    console.log(useUser())
     return (
-        <main>
+        <Main>
             <Banner>
                 <h1>Bem-vindo(a)!</h1>
             </Banner>
             <Container>
-         
-                    <CategoriesCarousel />
-                    <OffersCarousel />
-           
+                <CategoriesCarousel />
+                <OffersCarousel />
             </Container>
-        </main>
+            <Footer />
+        </Main>
     );
 }
