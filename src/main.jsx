@@ -5,7 +5,6 @@ import { ToastContainer } from 'react-toastify'
 import { RouterProvider } from 'react-router-dom'
 import { router } from './routes'
 
-
 import GlobalStyles from './styles/globalStyles'
 import AppProvider from './hooks'
 

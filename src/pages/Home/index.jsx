@@ -11,7 +11,9 @@ export function Home() {
     return (
         <Main>
             <Banner>
-                <h1>Bem-vindo(a)!</h1>
+                <h1>Bem-vindo(a)! <br />
+                    <span>Esse cardápio está irrestível!</span>
+                </h1>
             </Banner>
             <Container>
                 <CategoriesCarousel />

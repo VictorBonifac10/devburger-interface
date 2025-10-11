@@ -11,15 +11,21 @@ export const Banner = styled.div`
     background: linear-gradient(rgba(0, 0, 0, 0.72),rgba(48, 25, 73, 0.45)), url('${BannerHome}');
     background-size: cover;
     background-position: center;
-    height: 280px;
+    height: 400px;
 
     h1{
         font-family: 'Road Rage', sans-serif;
-        font-size: 70px;
+        font-size: 80px;
         color: #f4f4f4;
         position: absolute;
         right: 20%;
-        top: 10%;
+        top: 30%;
+
+        span{
+            display: block;
+            color: #fff;
+            font-size: 16px;
+        }
     }
 `
 
