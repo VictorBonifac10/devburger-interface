@@ -32,10 +32,11 @@ export const Banner = styled.div`
 export const Title = styled.div`
     font-size: 32px;
     font-weight: 800;
-    padding-bottom: 12px;
+    padding-bottom: 8px;
     color: #61a120;
     text-align: center;
     position: relative;
+    margin-top: 20px;
 
     &::after{
         position: absolute;
@@ -50,7 +51,7 @@ export const Title = styled.div`
 
 export const Content = styled.div`
     display: grid;
-    grid-template-columns: 1fr 20%;
+    grid-template-columns: 1fr 30%;
     gap: 40px;
     width: 100%;
     max-width: 1280px;

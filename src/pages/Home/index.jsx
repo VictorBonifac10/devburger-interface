@@ -1,7 +1,5 @@
-import { CardProduct } from "../../components/CardProduct";
-import { CategoriesCarousel } from "../../components/CategoriesCarousel";
 import { Footer } from "../../components/Footer";
-import { OffersCarousel } from "../../components/OffersCarousel";
+import { OffersCarousel, CategoriesCarousel } from "../../components";
 import { Main, Banner, Container } from "./styles";
 
 import { useUser } from "../../hooks/UserContext";
