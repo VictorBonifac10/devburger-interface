@@ -14,16 +14,16 @@ export const Banner = styled.div`
     height: 400px;
 
     h1{
-        font-family: 'Road Rage', sans-serif;
+        font-family: ${props => props.theme.roadRageFont};
         font-size: 80px;
-        color: #f4f4f4;
+        color: ${props => props.theme.darkWhite};
         position: absolute;
         right: 20%;
         top: 30%;
 
         span{
             display: block;
-            color: #fff;
+            color: ${props => props.theme.white};
             font-size: 16px;
         }
     }

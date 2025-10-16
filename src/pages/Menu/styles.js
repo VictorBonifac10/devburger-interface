@@ -9,7 +9,7 @@ export const Container = styled.div`
     background-position: center;
     width: 100%;
     min-height: 100vh;
-    background-color: #f0f0f0;
+    background-color: ${props => props.theme.secondWhite};
 `
 
 export const Banner = styled.div`
@@ -25,18 +25,18 @@ export const Banner = styled.div`
     background-size: cover;
 
     h1{
-        font-family: 'Road Rage', sans-serif;
+        font-family: ${props => props.theme.roadRageFont};
         font-size: 80px;
         line-height: 65px;
         position: absolute;
-        color: #fff;
+        color: ${props => props.theme.white};
 
         right: 20%;
         top: 20%;
 
         span{
             display: block;
-            color: #fff;
+            color: ${props => props.theme.white};
             font-size: 16px;
         }
     }
@@ -53,13 +53,13 @@ export const CategoryButton = styled(Link)`
     text-decoration: none;
     cursor: pointer;
     background: none;
-    color: ${props => (props.$isActiveCategory ? '#9758a6' : '#9a9a9d')};
+    color: ${props => (props.$isActiveCategory ? (props) => props.theme.purple : '#9a9a9d')};
     font-size: 18px;
     font-weight: 500;
     padding-bottom: 5px;
     line-height: 20px;
     border: none;
-    border-bottom: ${props => props.$isActiveCategory && '3px solid #9758a6'};
+    border-bottom: ${props => props.$isActiveCategory && `3px solid ${props => props.theme.purple}`};
 `
 
 export const ProductsContainer = styled.div`

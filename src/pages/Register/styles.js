@@ -44,9 +44,9 @@ export const RightContainer = styled.div`
 `;
 
 export const Title = styled.h2`
-    font-family: "Road Rage", sans-serif;
+    font-family: ${props => props.theme.roadRageFont};
     font-size: 35px;
-    color: #9758a6;
+    color: ${props => props.theme.purple};
     display: block;
     margin: 0 auto;
     text-align: center;
@@ -64,7 +64,7 @@ export const Form = styled.form`
     border-radius: 10px;
 
         p{
-        color: #fff;
+        color: ${props => props.theme.white};
         font-size: 15px;
 
         a{
@@ -89,18 +89,18 @@ export const InputContainer = styled.div`
 
     label{
         font-size: 15px;
-        color: #9758a6;
+        color: ${props => props.theme.purple};
     }
 
     p{
         font-size: 12px;
         line-height: 80%;
-        color: #cf3057;
+        color: ${props => props.theme.darkRed};
         height: 10px;
     }
 `;
 
 export const Link = styled(ReactLink)`
     text-decoration: none;
-    color: #fff;
+    color: ${props => props.theme.white};
 `;

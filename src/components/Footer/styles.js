@@ -5,11 +5,10 @@ export const ContainerFooter = styled.div`
     height: auto;
     display: flex;
     justify-content: center;
-    background-color: #9758a6;
-    margin-top: 40px;
+    background-color: ${props => props.theme.purple};
 
     p{
-        color: #fff;
+        color: ${props => props.theme.white};
         padding: 20px;
         margin: 0;
     }

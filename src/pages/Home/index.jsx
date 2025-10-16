@@ -1,4 +1,3 @@
-import { Footer } from "../../components/Footer";
 import { OffersCarousel, CategoriesCarousel } from "../../components";
 import { Main, Banner, Container } from "./styles";
 
@@ -17,7 +16,6 @@ export function Home() {
                 <CategoriesCarousel />
                 <OffersCarousel />
             </Container>
-            <Footer />
         </Main>
     );
 }

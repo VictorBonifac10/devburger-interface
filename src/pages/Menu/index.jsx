@@ -5,7 +5,6 @@ import { api } from "../../services/api";
 import { formatPrice } from "../../utils/formatPrice";
 import { CardProduct } from "../../components/CardProduct";
 import { useLocation, useNavigate } from "react-router-dom";
-import { Footer } from "../../components/Footer";
 import { BackButton } from "../../components/BackButton";
 
 export function Menu() {
@@ -105,7 +104,6 @@ export function Menu() {
                 ))}
             </ProductsContainer>
             <BackButton />
-            <Footer />
         </Container>
 
     );

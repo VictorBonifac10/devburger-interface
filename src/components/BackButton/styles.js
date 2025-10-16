@@ -9,8 +9,9 @@ export const Container = styled.div`
 
 export const Button = styled(Link)`
     text-decoration: none;
-    color: #9758a6;
+    color: ${props => props.theme.purple};
     cursor: pointer;
-    border-bottom: 3px solid #9758a6
+    border-bottom: 3px solid ${props => props.theme.purple};
+    margin-bottom: 40px;
 `
 
