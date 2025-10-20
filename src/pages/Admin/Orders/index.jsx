@@ -8,6 +8,7 @@ import Paper from '@mui/material/Paper';
 import { Row } from './row';
 import { useEffect, useState } from "react"
 import { api } from '../../../services/api';
+import { Container } from './styles'
 
 
 export function Orders() {
@@ -43,22 +44,30 @@ export function Orders() {
     }, [orders]); // mapeando orders
 
     return (
-        <TableContainer component={Paper}>
-            <Table aria-label="collapsible table">
-                <TableHead>
-                    <TableRow>
-                        <TableCell>Pedido</TableCell>
-                        <TableCell>Cliente</TableCell>
-                        <TableCell>Data do Pedido</TableCell>
-                        <TableCell>Status</TableCell>
-                    </TableRow>
-                </TableHead>
-                <TableBody>
-                    {rows.map((row) => (
-                        <Row key={row._id} row={row} />
-                    ))}
-                </TableBody>
-            </Table>
-        </TableContainer>
+        <Container>
+            <TableContainer component={Paper}>
+                <Table aria-label="collapsible table">
+                    <TableHead>
+                        <TableRow>
+                            <TableCell></TableCell>
+                            <TableCell className='titulo'>Pedido</TableCell>
+                            <TableCell className='titulo'>Cliente</TableCell>
+                            <TableCell className='titulo'>Data do Pedido</TableCell>
+                            <TableCell className='titulo'>Status</TableCell>
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
+                        {rows.map((row) => (
+                            <Row
+                                key={row.orderId}
+                                row={row}
+                                orders={orders}
+                                setOrders={setOrders}
+                            />
+                        ))}
+                    </TableBody>
+                </Table>
+            </TableContainer>
+        </Container>
     );
 }
