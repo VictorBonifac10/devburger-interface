@@ -44,6 +44,8 @@ export const LabelUpload = styled.label`
     border-radius: 5px;
     padding: 10px;
     display: flex;
+    align-items: center;
+    gap: 10px;
     color: ${(props) => props.theme.white};
     margin-top: 20px 0;
 
@@ -62,3 +64,11 @@ export const Select = styled(ReactSelect)``;
 export const SubmitButton = styled(Button)`
     margin-top: 40px;
 `;
+
+export const ErrorMessage = styled.span`
+
+    color: ${(props) => props.theme.darkRed};
+    font-size: 14px;
+    line-height: 80%;
+    font-weight: 600;
+`
