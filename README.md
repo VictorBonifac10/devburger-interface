@@ -1,4 +1,4 @@
-## 🍔 devburger-interface
+## 🍔 Interface DevBurger
 
 Interface de gerenciamento de pedidos de uma hamburgueria, conectada à API back-end, com funcionalidades de cadastro e autenticação de usuários, listagem de produtos, categorias, imagens, pedidos etc.
 
