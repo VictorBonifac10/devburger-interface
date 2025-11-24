@@ -33,8 +33,8 @@ Interface de gerenciamento de pedidos de uma hamburgueria, conectada à API back
 - Interface amigável para acompanhamento
 
 ## 📌 Observações
- 
-Projeto desenvolvido para praticar lógica de programação, manipulação do DOM e consumo de APIs utilizando React.
+
+Este front-end consome o backend como fonte de dados e camadas de serviços, exibindo e manipulando informações via interface React. O projeto está finalizado e integra-se ao backend por meio de chamadas HTTP/REST. Back-end: [https://github.com/VictorBonifac10/devburger_api]
 
 ## 📬 Contato
 - [GitHub Profile](https://github.com/VictorBonifac10)
