@@ -1,16 +1,41 @@
-# React + Vite
+## 🍔 devburger-interface
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Interface de gerenciamento de pedidos de uma hamburgueria, conectada à API back-end, com funcionalidades de cadastro e autenticação de usuários, listagem de produtos, categorias, imagens, pedidos etc.
 
-Currently, two official plugins are available:
+## ✨ Recursos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React.js (Biblioteca principal)
+- Vite (Ferramenta de build e desenvolvimento)
+- Styled-components (Estilização com CSS-in-JS)
+- Yarn (Gerenciamento de pacotes)
+- Axios (Consumo da API)
+- React Router DOM (Gerenciamento de rotas)
+- ESLint / Prettier (Padronização e formatação de código)
+- Webhooks (Integrações e sincronizações automáticas – se aplicável no futuro)
+- LocalStorage (Persistência de sessão do usuário)
 
-## React Compiler
+## 🧩 Funcionalidades
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Autenticação de Usuários**
+- Login com token JWT recebido do back-end
+- Armazenamento seguro do token no LocalStorage
+- Controle de acesso a rotas privadas no front-end
 
-## Expanding the ESLint configuration
+- **Interface de Gestão de Produtos e Categorias**
+- Listagem de produtos e categorias
+- Formulários de cadastro e edição
+- Upload de imagens integrado com a API
+- Preview de imagens
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Gestão de Pedidos**
+- Listagem visual e responsiva dos pedidos
+- Atualização de status do pedido
+- Interface amigável para acompanhamento
+
+## 📌 Observações
+ 
+Projeto desenvolvido para praticar lógica de programação, manipulação do DOM e consumo de APIs utilizando React.
+
+## 📬 Contato
+- [GitHub Profile](https://github.com/VictorBonifac10)
+- [LinkedIn](https://www.linkedin.com/in/victor-alves-bonifacio/)
